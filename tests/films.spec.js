@@ -1,4 +1,4 @@
-const movies = require('../src/data');
+const movies = require('../src/data')
 const {
   getAllDirectors,
   getMoviesFromDirector,
@@ -14,7 +14,7 @@ const {
 describe('Function "getAllDirectors"', () => {
   it('should be declared', () => {
     expect(typeof getAllDirectors).toBe('function');
-  });
+  })
 
   it('should return an array', () => {
     expect(getAllDirectors(movies) instanceof Array).toBe(true);
@@ -291,12 +291,33 @@ describe('Function "orderByYear"', () => {
 });
 
 // Exercise 6
-// YOUR CODE HERE. Test moviesAverageByCategory()
+
 describe('Function "moviesAverageByCategory"', () => {
-  it('ADD YOUR CODE IN films.spec.js file', () => {
-    expect(typeof hoursToMinutes).toBe('coffee');
-  });
-});
+  it('shoul be declared', () => {
+    expect(typeof moviesAverageByCategory).toBe('function');
+  })
+
+  it('should return a number', () => {
+      const movies = [
+      { tittle: "Movie 1", genre: ["Action"], score: 8 },
+      { tittle: "Movie 2", genre: ["Action"], score: 7 },
+      { tittle: "Movie 3", genre: ["Action"], score: 9 },
+    ]
+
+   expect(typeof moviesAverageByCategory(movies, "Action")).toBe("number")
+  })
+
+  it("should return the average score for the selected genre", () => {
+    const movies = [
+      { title: "Movie 1", genre: ["Action"], score: 8 },
+      { title: "Movie 2", genre: ["Action"], score: 7 },
+      { title: "Movie 3", genre: ["Action"], score: 9 },
+    ];
+    const expectedAverage = (8 + 7 + 9) / 3
+    expect(moviesAverageByCategory(movies, "Action")).toBe(expectedAverage);
+  })
+})
+
 
 // Exercise 7
 describe('Function "hoursToMinutes"', () => {
